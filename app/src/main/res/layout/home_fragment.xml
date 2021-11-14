@@ -1,0 +1,749 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="viewModel"
+            type="com.example.behale.homeFragment.HomeViewModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".homeFragment.HomeFragment">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_untitled_1_01" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never"
+            android:scrollbars="none">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="24dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="Health Reminder,"
+                    android:textColor="@color/white"
+                    android:textSize="36sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="A step towards healthy lifestyle"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="@+id/textView"
+                    app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/water_card_view"
+                    android:layout_width="0dp"
+                    android:layout_height="350dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    app:cardCornerRadius="29dp"
+                    app:cardElevation="2dp"
+                    app:cardUseCompatPadding="true"
+                    app:cardBackgroundColor="@color/white"
+                    app:layout_constraintEnd_toStartOf="@+id/pills_card_view"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/water_card_view_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:clickable="true"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:focusable="true">
+
+                        <ImageView
+                            android:id="@+id/imageView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
+                            android:src="@drawable/ic_waterdrop"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/textView3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:fontFamily="sans-serif-medium"
+                            android:text="Water"
+                            android:textColor="@color/gray"
+                            android:textSize="24sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.mikhaellopez.circularprogressbar.CircularProgressBar
+                            android:id="@+id/progress_bar_for_water_Reminder"
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginHorizontal="24dp"
+                            app:cpb_background_progressbar_color="#D4D8F3"
+                            app:cpb_background_progressbar_width="7dp"
+                            app:cpb_progress_direction="to_right"
+                            android:progress="@{viewModel.waterProgress * 100 / viewModel.waterGoal}"
+                            app:cpb_progressbar_color_start="@color/mainThemeColor"
+                            app:cpb_progressbar_color_end="@color/mainThemeColor2"
+                            app:cpb_progressbar_width="9dp"
+                            app:cpb_round_border="true"
+                            app:layout_constraintDimensionRatio="h,1:1"
+                            app:cpb_progress="65"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+                        <TextView
+                            android:id="@+id/water_progress_text_view"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="12dp"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="@{viewModel.waterProgress.toString()}"
+                            android:textColor="@color/black"
+                            android:textSize="24sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/progress_bar_for_water_Reminder"
+                            app:layout_constraintEnd_toEndOf="@+id/progress_bar_for_water_Reminder"
+                            app:layout_constraintStart_toStartOf="@+id/progress_bar_for_water_Reminder"
+                            app:layout_constraintTop_toTopOf="@+id/progress_bar_for_water_Reminder"
+                            tools:text="1352" />
+
+                        <androidx.legacy.widget.Space
+                            android:id="@+id/space_for_water_card_view"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="24dp"
+                            app:layout_constraintBottom_toBottomOf="@+id/water_progress_text_view"
+                            app:layout_constraintEnd_toEndOf="@+id/water_progress_text_view"
+                            app:layout_constraintStart_toStartOf="@+id/water_progress_text_view" />
+
+                        <TextView
+                            android:id="@+id/textView6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="12dp"
+                            android:fontFamily="sans-serif-medium"
+                            android:text="ml"
+                            android:textColor="@color/darkGray"
+                            android:textSize="16sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/progress_bar_for_water_Reminder"
+                            app:layout_constraintEnd_toEndOf="@+id/progress_bar_for_water_Reminder"
+                            app:layout_constraintStart_toStartOf="@+id/progress_bar_for_water_Reminder"
+                            app:layout_constraintTop_toBottomOf="@+id/space_for_water_card_view" />
+
+                        <TextView
+                            android:id="@+id/textView5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="8dp"
+                            android:fontFamily="@font/roboto_bold"
+                            android:text="2530"
+                            android:textColor="@color/black"
+                            android:textSize="27sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/progress_bar_for_water_Reminder" />
+
+                        <androidx.legacy.widget.Space
+                            android:id="@+id/space_for_water_card_view_second"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            app:layout_constraintBottom_toBottomOf="@+id/textView5"
+                            app:layout_constraintEnd_toEndOf="@+id/textView5"
+                            app:layout_constraintStart_toStartOf="@+id/textView5" />
+
+                        <TextView
+                            android:id="@+id/textView7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-medium"
+                            android:text="ml"
+                            android:textColor="@color/gray"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="@+id/textView5"
+                            app:layout_constraintTop_toBottomOf="@+id/space_for_water_card_view_second" />
+
+
+                        <ImageView
+                            android:id="@+id/imageView2"
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_marginTop="16dp"
+                            android:src="@drawable/ic_icon_ionic_ios_add"
+                            app:layout_constraintEnd_toStartOf="@+id/container_size_textview"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintHorizontal_chainStyle="packed"
+                            app:layout_constraintStart_toStartOf="@+id/textView8"
+                            app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+                        <TextView
+                            android:id="@+id/container_size_textview"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="@{viewModel.containerSize.toString()}"
+                            android:textColor="@color/black"
+                            android:textSize="24sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+                            app:layout_constraintEnd_toStartOf="@+id/textView10"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/imageView2"
+                            app:layout_constraintTop_toTopOf="@+id/imageView2"
+                            tools:text="300" />
+
+                        <TextView
+                            android:id="@+id/textView10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-medium"
+                            android:text="ml"
+                            android:textColor="@color/darkGray"
+                            android:layout_marginStart="2dp"
+                            android:layout_marginBottom="4dp"
+                            android:textSize="16sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/container_size_textview"
+                            app:layout_constraintEnd_toEndOf="@+id/textView8"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/container_size_textview" />
+
+                        <TextView
+                            android:id="@+id/textView8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="8dp"
+                            android:fontFamily="sans-serif-medium"
+                            android:onClick="@{() -> viewModel.onDrinkWaterClicked()}"
+                            android:text="Drink Now"
+                            android:clickable="true"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:textColor="@color/mainThemeColor2"
+                            android:textSize="24sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/imageView2"
+                            android:focusable="true" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/pills_card_view"
+                    android:layout_width="0dp"
+                    android:layout_height="175dp"
+                    android:layout_marginEnd="8dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="29dp"
+                    app:cardElevation="2dp"
+                    app:cardUseCompatPadding="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintStart_toEndOf="@+id/water_card_view"
+                    app:layout_constraintTop_toTopOf="@+id/water_card_view">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/pills_card_view_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:clickable="true"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:focusable="true">
+
+                        <ImageView
+                            android:id="@+id/imageView3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
+                            android:src="@drawable/ic_pills"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/textView20"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:fontFamily="sans-serif-medium"
+                            android:text="Pills"
+                            android:textColor="@color/gray"
+                            android:textSize="24sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <Button
+                            android:id="@+id/schedule_button_of_pills"
+                            android:layout_width="0dp"
+                            android:layout_height="32dp"
+                            android:layout_marginHorizontal="16dp"
+                            android:layout_marginTop="16dp"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:visibility="@{viewModel.pillReminders.isEmpty() ? View.VISIBLE : View.INVISIBLE}"
+                            android:foreground="?attr/selectableItemBackground"
+                            android:background="@drawable/button_background"
+                            app:backgroundTint="@null"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-medium"
+                            android:text="Schedule Now"
+                            android:textColor="@color/mainThemeColor2"
+                            android:textSize="16sp"
+                            android:visibility="@{viewModel.pillReminders.isEmpty() ? View.VISIBLE : View.INVISIBLE}"
+                            app:layout_constraintBottom_toBottomOf="@+id/schedule_button_of_pills"
+                            app:layout_constraintEnd_toEndOf="@+id/schedule_button_of_pills"
+                            app:layout_constraintStart_toStartOf="@+id/schedule_button_of_pills"
+                            app:layout_constraintTop_toTopOf="@+id/schedule_button_of_pills" />
+
+                        <ImageView
+                            android:id="@+id/awesome_check"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:visibility="@{viewModel.pillReminders.isEmpty() ? View.INVISIBLE : View.VISIBLE}"
+                            android:src="@drawable/ic_icon_awesome_check_circle"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            tools:visibility="invisible"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/awesome_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-medium"
+                            android:text="Tap to view"
+                            android:textColor="@color/gray"
+                            tools:visibility="invisible"
+                            android:textSize="24sp"
+                            android:visibility="@{viewModel.pillReminders.isEmpty() ? View.INVISIBLE : View.VISIBLE}"
+                            android:layout_marginBottom="16dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/awesome_check" />
+
+                        <TextView
+                            android:id="@+id/textView22"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="6dp"
+                            android:layout_marginEnd="16dp"
+                            android:visibility="@{viewModel.pillReminders.isEmpty() ? View.VISIBLE : View.INVISIBLE}"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="center_horizontal"
+                            android:text="(preferred only if you are regular pill consumer)"
+                            android:textColor="@color/gray"
+                            android:textSize="11sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/schedule_button_of_pills" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/diet_card_view"
+                    android:layout_width="0dp"
+                    android:layout_height="167dp"
+                    app:cardCornerRadius="29dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardElevation="2dp"
+                    app:cardUseCompatPadding="true"
+                    android:layout_marginStart="8dp"
+                    app:layout_constraintEnd_toStartOf="@+id/steps_card_view"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/water_card_view">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/diet_card_view_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:clickable="true"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:focusable="true">
+
+                        <ImageView
+                            android:id="@+id/imageView4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
+                            android:src="@drawable/ic_icon_map_food"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:fontFamily="sans-serif-medium"
+                            android:text="Diet"
+                            android:textColor="@color/gray"
+                            android:textSize="24sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <Button
+                            android:id="@+id/schedule_button_of_diet"
+                            android:layout_width="0dp"
+                            android:layout_height="32dp"
+                            android:layout_marginHorizontal="16dp"
+                            android:layout_marginTop="16dp"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:visibility="@{viewModel.dietReminders.isEmpty() ? View.VISIBLE : View.INVISIBLE}"
+                            android:foreground="?attr/selectableItemBackground"
+                            android:background="@drawable/button_background"
+                            app:backgroundTint="@null"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-medium"
+                            android:text="Schedule Now"
+                            android:textColor="@color/mainThemeColor2"
+                            android:textSize="16sp"
+                            android:visibility="@{viewModel.dietReminders.isEmpty() ? View.VISIBLE : View.INVISIBLE}"
+                            app:layout_constraintBottom_toBottomOf="@+id/schedule_button_of_diet"
+                            app:layout_constraintEnd_toEndOf="@+id/schedule_button_of_diet"
+                            app:layout_constraintStart_toStartOf="@+id/schedule_button_of_diet"
+                            app:layout_constraintTop_toTopOf="@+id/schedule_button_of_diet" />
+
+                        <ImageView
+                            android:id="@+id/awesome_check2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_icon_awesome_check_circle"
+                            android:visibility="@{viewModel.dietReminders.isEmpty() ? View.INVISIBLE : View.VISIBLE}"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            tools:visibility="invisible"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/awesome_text2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-medium"
+                            android:text="Tap to view"
+                            android:textColor="@color/gray"
+                            android:visibility="@{viewModel.dietReminders.isEmpty() ? View.INVISIBLE : View.VISIBLE}"
+                            android:textSize="24sp"
+                            android:layout_marginBottom="16dp"
+                            tools:visibility="invisible"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/awesome_check2" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="6dp"
+                            android:layout_marginEnd="16dp"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="center_horizontal"
+                            android:visibility="@{viewModel.dietReminders.isEmpty() ? View.VISIBLE : View.INVISIBLE}"
+                            android:text="(Schedule your diet plan for a week)"
+                            android:textColor="@color/gray"
+                            android:textSize="11sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/schedule_button_of_diet" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/steps_card_view"
+                    android:layout_width="0dp"
+                    android:layout_height="342dp"
+                    android:layout_marginEnd="8dp"
+                    app:cardCornerRadius="29dp"
+                    app:cardElevation="2dp"
+                    app:cardUseCompatPadding="true"
+                    app:cardBackgroundColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintStart_toEndOf="@+id/diet_card_view"
+                    app:layout_constraintTop_toBottomOf="@+id/pills_card_view">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/steps_card_view_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:clickable="true"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:focusable="true">
+
+                        <ImageView
+                            android:id="@+id/imageView5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
+                            android:src="@drawable/ic_shoe"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/textView11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:fontFamily="sans-serif-medium"
+                            android:text="Steps"
+                            android:textColor="@color/gray"
+                            android:textSize="24sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.mikhaellopez.circularprogressbar.CircularProgressBar
+                            android:id="@+id/progress_bar_for_Steps_Reminder"
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginHorizontal="24dp"
+                            app:cpb_background_progressbar_color="#D4D8F3"
+                            app:cpb_background_progressbar_width="7dp"
+                            app:cpb_progress_direction="to_right"
+                            android:progress="@{viewModel.stepProgress*100/viewModel.stepGoal > 100 ? 100 : viewModel.stepProgress*100/viewModel.stepGoal}"
+                            app:cpb_progressbar_color_start="@color/mainThemeColor"
+                            app:cpb_progressbar_color_end="@color/mainThemeColor2"
+                            app:cpb_progressbar_width="9dp"
+                            app:cpb_round_border="true"
+                            app:layout_constraintDimensionRatio="h,1:1"
+                            app:cpb_progress="65"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/imageView5"/>
+
+                        <TextView
+                            android:id="@+id/textView12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="12dp"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="@{String.valueOf(viewModel.stepProgress)}"
+                            tools:text="3402"
+                            android:textColor="@color/black"
+                            android:textSize="24sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/progress_bar_for_Steps_Reminder"
+                            app:layout_constraintEnd_toEndOf="@+id/progress_bar_for_Steps_Reminder"
+                            app:layout_constraintStart_toStartOf="@+id/progress_bar_for_Steps_Reminder"
+                            app:layout_constraintTop_toTopOf="@+id/progress_bar_for_Steps_Reminder" />
+
+                        <androidx.legacy.widget.Space
+                            android:id="@+id/space_for_walk_card_view"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="24dp"
+                            app:layout_constraintBottom_toBottomOf="@+id/textView12"
+                            app:layout_constraintEnd_toEndOf="@+id/textView12"
+                            app:layout_constraintStart_toStartOf="@+id/textView12" />
+
+                        <TextView
+                            android:id="@+id/textView13"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="12dp"
+                            android:fontFamily="sans-serif-medium"
+                            android:text="steps"
+                            android:textColor="@color/darkGray"
+                            android:textSize="16sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/progress_bar_for_Steps_Reminder"
+                            app:layout_constraintEnd_toEndOf="@+id/progress_bar_for_Steps_Reminder"
+                            app:layout_constraintStart_toStartOf="@+id/progress_bar_for_Steps_Reminder"
+                            app:layout_constraintTop_toBottomOf="@+id/space_for_walk_card_view" />
+
+                        <TextView
+                            android:id="@+id/textView14"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:fontFamily="@font/roboto_bold"
+                            android:text="@{String.valueOf(viewModel.stepGoal)}"
+                            tools:text="10000"
+                            android:textColor="@color/black"
+                            android:textSize="27sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/progress_bar_for_Steps_Reminder" />
+
+                        <androidx.legacy.widget.Space
+                            android:id="@+id/space_for_walk_card_view_second"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            app:layout_constraintBottom_toBottomOf="@+id/textView14"
+                            app:layout_constraintEnd_toEndOf="@+id/textView14"
+                            app:layout_constraintStart_toStartOf="@+id/textView14" />
+
+                        <TextView
+                            android:id="@+id/textView15"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-medium"
+                            android:text="steps"
+                            android:textColor="@color/gray"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="@+id/textView14"
+                            app:layout_constraintTop_toBottomOf="@+id/space_for_walk_card_view_second" />
+
+                        <View
+                            android:id="@+id/view"
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginHorizontal="20dp"
+                            android:layout_marginTop="8dp"
+                            android:background="@color/gray"
+                            app:layout_constraintTop_toBottomOf="@+id/textView15"
+                            tools:layout_editor_absoluteX="0dp" />
+
+                        <TextView
+                            android:id="@+id/textView17"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-medium"
+                            android:text="Yesterday"
+                            android:layout_marginTop="8dp"
+                            android:textColor="@color/gray"
+                            android:textSize="24sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="@+id/textView14"
+                            app:layout_constraintTop_toBottomOf="@+id/view" />
+
+                        <TextView
+                            android:id="@+id/textView16"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-medium"
+                            android:text="@{String.valueOf(viewModel.yesterdaySteps)}"
+                            tools:text="9940"
+                            android:textColor="@color/mainThemeColor2"
+                            android:textSize="18sp"
+                            app:layout_constraintStart_toStartOf="@+id/textView17"
+                            app:layout_constraintTop_toBottomOf="@+id/textView17" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="29dp"
+                    app:cardElevation="2dp"
+                    app:cardUseCompatPadding="true"
+                    app:layout_constraintEnd_toStartOf="@+id/steps_card_view"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/diet_card_view">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/imageView6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
+                            android:src="@drawable/ic_lightbulb"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/textView18"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:fontFamily="sans-serif-medium"
+                            android:text="Health Tips"
+                            android:textColor="@color/gray"
+                            android:textSize="24sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/roboto_regular"
+                            android:textColor="@color/gray"
+                            android:layout_marginHorizontal="16dp"
+                            android:text="@string/health_tips"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textView18" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+    </FrameLayout>
+</layout>

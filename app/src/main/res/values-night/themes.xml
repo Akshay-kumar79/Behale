@@ -1,0 +1,39 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Behale" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/mainThemeColor</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">@color/mainThemeColor</item>
+
+        <item name="android:timePickerStyle">@style/MyTimePickerStyle</item>
+
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="MyTimePickerStyle" parent="android:Widget.Material.Light.TimePicker">
+        <item name="android:timePickerMode">spinner</item>
+    </style>
+
+    <style name="SplashTheme" parent="Theme.Behale">
+        <item name="android:windowBackground">@drawable/ic_splash_screen_background</item>
+    </style>
+
+    <style name="Color1SwitchStyle">
+        <item name="colorControlActivated">@color/mainThemeColor</item>
+    </style>
+
+    <style name="toggleButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="strokeColor">@drawable/toggle_button_checked_state_stroke</item>
+        <item name="android:textColor">@drawable/toggle_button_text</item>
+        <item name="rippleColor">#A3707ADC</item>
+        <item name="backgroundTint">@drawable/toggle_button_checked_state_background</item>
+    </style>
+
+</resources>

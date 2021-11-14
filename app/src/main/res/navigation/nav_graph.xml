@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.behale.homeFragment.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/home_fragment">
+        <action
+            android:id="@+id/action_homeFragment_to_waterFragment"
+            app:destination="@id/water_nav_graph"
+            app:enterAnim="@animator/slide_in_right"
+            app:exitAnim="@animator/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_homeFragment_to_stepsFragment"
+            app:destination="@id/stepsFragment"
+            app:enterAnim="@animator/slide_in_right"
+            app:exitAnim="@animator/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_homeFragment_to_dietFragment"
+            app:destination="@id/diet_nav_graph"
+            app:enterAnim="@animator/slide_in_right"
+            app:exitAnim="@animator/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_homeFragment_to_pillsFragment"
+            app:destination="@id/pills_nav_graph"
+            app:enterAnim="@animator/slide_in_right"
+            app:exitAnim="@animator/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/stepsFragment"
+        android:name="com.example.behale.stepsFragment.StepsFragment"
+        android:label="Steps"
+        tools:layout="@layout/steps_fragment" />
+
+    <navigation android:id="@+id/water_nav_graph"
+        app:startDestination="@id/waterFragment">
+        <fragment
+            android:id="@+id/waterFragment"
+            android:name="com.example.behale.waterFragment.WaterFragment"
+            android:label="Water"
+            tools:layout="@layout/water_fragment">
+            <action
+                android:id="@+id/action_waterFragment_to_addWaterReminderDialog"
+                app:destination="@id/addWaterReminderDialog" />
+            <action
+                android:id="@+id/action_waterFragment_to_changeContainerDialog"
+                app:destination="@id/changeContainerDialog" />
+            <action
+                android:id="@+id/action_waterFragment_to_editWaterReminderDialog"
+                app:destination="@id/editWaterReminderDialog" />
+        </fragment>
+        <dialog
+            android:id="@+id/changeContainerDialog"
+            android:name="com.example.behale.waterFragment.dialogs.ChangeContainerDialog"
+            android:label="ChangeContainerDialog"
+            tools:layout="@layout/dialog_change_container"/>
+        <dialog
+            android:id="@+id/addWaterReminderDialog"
+            android:name="com.example.behale.waterFragment.dialogs.AddWaterReminderDialog"
+            android:label="AddWaterReminderDialog"
+            tools:layout="@layout/dialog_add_water_reminder"/>
+        <dialog
+            android:id="@+id/editWaterReminderDialog"
+            android:name="com.example.behale.waterFragment.dialogs.EditWaterReminderDialog"
+            android:label="EditWaterReminderDialog"
+            tools:layout="@layout/dialog_edit_water_reminder"/>
+    </navigation>
+    <navigation android:id="@+id/diet_nav_graph"
+        app:startDestination="@id/dietFragment">
+        <fragment
+            android:id="@+id/dietFragment"
+            android:name="com.example.behale.dietFragment.DietFragment"
+            android:label="Diet"
+            tools:layout="@layout/diet_fragment">
+            <action
+                android:id="@+id/action_dietFragment_to_addDietDialog"
+                app:destination="@id/addDietDialog" />
+            <action
+                android:id="@+id/action_dietFragment_to_editDietDialog"
+                app:destination="@id/editDietDialog" />
+        </fragment>
+
+        <dialog
+            android:id="@+id/addDietDialog"
+            android:name="com.example.behale.dietFragment.dialogs.AddDietDialog"
+            android:label="AddDietDialog"
+            tools:layout="@layout/dialog_add_diet" />
+        <dialog
+            android:id="@+id/editDietDialog"
+            android:name="com.example.behale.dietFragment.dialogs.EditDietDialog"
+            android:label="EditDietDialog"
+            tools:layout="@layout/dialog_edit_diet"/>
+    </navigation>
+    <navigation android:id="@+id/pills_nav_graph"
+        app:startDestination="@id/pillsFragment">
+        <fragment
+            android:id="@+id/pillsFragment"
+            android:name="com.example.behale.pillsFragment.PillsFragment"
+            android:label="Pills"
+            tools:layout="@layout/pills_fragment">
+            <action
+                android:id="@+id/action_pillsFragment_to_addPillFragment"
+                app:destination="@id/addPillFragment" />
+            <action
+                android:id="@+id/action_pillsFragment_to_pillDetailFragment"
+                app:destination="@id/pillDetailFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/addPillFragment"
+            android:name="com.example.behale.pillsFragment.dialogs.AddPillFragment"
+            android:label="Add Your Pill"
+            tools:layout="@layout/fragment_add_pill" />
+        <fragment
+            android:id="@+id/pillDetailFragment"
+            android:name="com.example.behale.pillsFragment.dialogs.PillDetailFragment"
+            android:label="Pill Detail"
+            tools:layout="@layout/fragment_pill_detail" />
+    </navigation>
+
+</navigation>

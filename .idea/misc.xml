@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.3181818181818182" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/drawable/button_backgroud.xml" value="0.3356164383561644" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/drawable/button_background.xml" value="0.3181818181818182" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/drawable/circle_shape.xml" value="0.3356164383561644" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/drawable/circular_progress_bar.xml" value="0.3356164383561644" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/drawable/dialog_button_background.xml" value="0.3181818181818182" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/drawable/dialog_white_background.xml" value="0.3181818181818182" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/drawable/ic_alarm.xml" value="0.3181818181818182" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/drawable/ic_baseline_delete_24.xml" value="0.3181818181818182" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/drawable/ic_cup.xml" value="0.3181818181818182" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/drawable/ic_icon_ionic_ios_add.xml" value="0.3181818181818182" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/drawable/ic_icon_ionic_ios_arrow_back_left.xml" value="0.3181818181818182" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/drawable/ic_icon_ionic_ios_arrow_back_right.xml" value="0.3181818181818182" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/drawable/ic_icon_map_food.xml" value="0.3181818181818182" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/drawable/ic_icon_material_delete_forever.xml" value="0.3181818181818182" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/drawable/ic_icon_material_history.xml" value="0.3181818181818182" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/drawable/ic_launcher_background.xml" value="0.3181818181818182" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/drawable/ic_pills.xml" value="0.3181818181818182" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/drawable/ic_rectangle_5.xml" value="0.3356164383561644" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/drawable/ic_splash_screen_background.xml" value="0.3181818181818182" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/drawable/ic_untitled_1.xml" value="0.5" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/drawable/ic_untitled_1_01.xml" value="0.3356164383561644" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/drawable/ic_waterDrop.xml" value="0.3181818181818182" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/drawable/ic_waterdrop.xml" value="0.3181818181818182" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/drawable/progress_bar_background.xml" value="0.3181818181818182" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/drawable/spinner_background.xml" value="0.3181818181818182" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/drawable/tips_background.xml" value="0.3181818181818182" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/drawable/toggle_button_backgroud.xml" value="0.3181818181818182" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/drawable/toggle_button_checked_state.xml" value="0.3181818181818182" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/drawable/toggle_button_checked_state_background.xml" value="0.3181818181818182" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/drawable/toggle_button_checked_state_stroke.xml" value="0.3181818181818182" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/drawable/toggle_button_text.xml" value="0.3181818181818182" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/layout/change_container_dialog.xml" value="0.3087719298245614" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/layout/dialog_add_diet.xml" value="0.3087719298245614" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/layout/dialog_add_pills_reminder.xml" value="0.3087719298245614" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/layout/dialog_add_water_reminder.xml" value="0.3087719298245614" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/layout/dialog_change_container.xml" value="0.3087719298245614" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/layout/dialog_edit_diet.xml" value="0.3087719298245614" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/layout/dialog_edit_pills_reminder.xml" value="0.3087719298245614" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/layout/dialog_edit_water_reminder.xml" value="0.3087719298245614" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/layout/dialog_set_water_reminder.xml" value="0.3087719298245614" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/layout/diet_fragment.xml" value="0.3087719298245614" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/layout/fragment_add_pill.xml" value="0.3087719298245614" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/layout/fragment_pill_detail.xml" value="0.33" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/layout/home_fragment.xml" value="0.33" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/layout/list_item_for_add_pill_time.xml" value="0.3087719298245614" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/layout/list_item_for_diet_reminder.xml" value="0.3087719298245614" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/layout/list_item_for_pills_reminder.xml" value="0.3087719298245614" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/layout/list_item_for_steps_reminder.xml" value="0.3087719298245614" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/layout/list_item_for_water_reminder.xml" value="0.25" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/layout/pills_fragment.xml" value="0.2969298245614035" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/layout/set_water_reminder_dialog.xml" value="0.3087719298245614" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/layout/settings_fragment.xml" value="0.2969298245614035" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/layout/spiner_item.xml" value="0.31842105263157894" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/layout/steps_fragment.xml" value="0.3087719298245614" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/layout/water_fragment.xml" value="0.33" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/layouts/diet/layout/diet_fragment.xml" value="0.33" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/layouts/diet/layout/list_item_for_diet_reminder.xml" value="0.3087719298245614" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/layouts/home/drawable/ic_launcher_background.xml" value="0.18464912280701753" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/layouts/home/drawable/ic_launcher_foreground.xml" value="0.18464912280701753" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/layouts/home/drawable/ic_main_activity___12__1_.xml" value="0.3181818181818182" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/layouts/home/drawable/ic_main_activity___6.xml" value="0.3181818181818182" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/layouts/home/drawable/ic_splace_screen_backgroung.xml" value="0.3181818181818182" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/layouts/home/drawable/ic_splash_screen_background.xml" value="0.3181818181818182" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/layouts/home/layout/home_fragment.xml" value="0.33" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/layouts/home/mipmap-anydpi-v26/ic_launcher.xml" value="0.18464912280701753" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/layouts/home/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.18464912280701753" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/layouts/steps/layout/list_item_for_steps_reminder.xml" value="0.3087719298245614" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/layouts/steps/layout/steps_fragment.xml" value="0.3087719298245614" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/layouts/water/layout/dialog_add_water_reminder.xml" value="0.3087719298245614" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/layouts/water/layout/dialog_change_container.xml" value="0.3087719298245614" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/layouts/water/layout/dialog_edit_water_reminder.xml" value="0.3087719298245614" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/layouts/water/layout/list_item_for_water_reminder.xml" value="0.29444444444444445" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/layouts/water/layout/water_fragment.xml" value="0.3087719298245614" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.18464912280701753" />
+        <entry key="..\:/Users/Akshay kumar shaw/AndroidStudioProjects/Behale/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.18464912280701753" />
+        <entry key="..\:/Users/Akshay kumar shaw/AppData/Local/Android/Sdk/platforms/android-30/data/res/layout/simple_spinner_dropdown_item.xml" value="0.31842105263157894" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
