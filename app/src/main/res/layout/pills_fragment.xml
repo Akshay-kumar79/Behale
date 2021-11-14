@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.behale.pillsFragment.PillsViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/tool_bar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/mainThemeColor2"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Dark"
+            app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:title="Pills" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none"
+            android:overScrollMode="never">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Your Pills"
+                    android:textColor="@color/mainThemeColor2"
+                    android:textSize="24sp"
+                    android:layout_marginTop="24dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_goneMarginTop="24dp" />
+
+                <ScrollView
+                    android:id="@+id/horizontalScrollView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none"
+                    android:overScrollMode="never"
+                    android:layout_marginHorizontal="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView8">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:orientation="vertical">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recyclerView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:clipToPadding="false"
+                            listPillsReminderData="@{viewModel.pillReminders}"
+                            android:orientation="vertical"
+                            android:overScrollMode="never"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            app:reverseLayout="false" />
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/add_pill_card_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="22dp"
+                            app:cardElevation="2dp"
+                            app:cardUseCompatPadding="true">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_icon_ionic_ios_add" />
+
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+
+                </ScrollView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+</layout>

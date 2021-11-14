@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.example.behale.pillsFragment.PillsViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/tool_bar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/mainThemeColor2"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Dark"
+            app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:title="Add Your Pill" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/pill_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="24dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/gray"
+                    app:backgroundTint="@color/black"
+                    android:layout_marginTop="16dp"
+                    android:hint="pill name"
+                    android:maxLength="20" />
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="28dp"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Type"
+                    android:textColor="@color/mainThemeColor2"
+                    android:textSize="18sp"
+                    android:textStyle="normal" />
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="24dp"
+                    android:layout_marginTop="8dp"
+                    android:theme="@style/ThemeOverlay.AppCompat.Light"
+                    android:background="@drawable/spinner_background"
+                    android:onItemSelected="@{viewModel::onAddPillSpinnerItemSelected}"
+                    android:spinnerMode="dropdown" />
+
+                <EditText
+                    android:id="@+id/period_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="24dp"
+                    android:layout_marginTop="16dp"
+                    android:hint="period (in days)"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/gray"
+                    app:backgroundTint="@color/black"
+                    android:inputType="number"
+                    android:maxLength="2"
+                    android:visibility="@{viewModel.spinnerSelectedItem == 2 ? View.VISIBLE : View.GONE}"
+                    tools:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="28dp"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Time"
+                    android:textColor="@color/mainThemeColor2"
+                    android:textSize="18sp"
+                    android:textStyle="normal" />
+
+                <HorizontalScrollView
+                    android:id="@+id/horizontalScrollView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:overScrollMode="never"
+                    android:scrollbars="none"
+                    android:visibility="@{viewModel.spinnerSelectedItem == 0 ? View.VISIBLE : View.GONE}">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/time_recycler_view"
+                            listTimeDataInAddPill="@{viewModel.listOfTimeForAddPill}"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:clipToPadding="false"
+                            android:orientation="horizontal"
+                            android:overScrollMode="never"
+                            android:paddingStart="8dp"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            app:reverseLayout="false" />
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/add_pill_card_view"
+                            android:layout_width="90dp"
+                            android:layout_height="75dp"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="22dp"
+                            app:cardElevation="2dp"
+                            app:cardUseCompatPadding="true">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_icon_ionic_ios_add" />
+
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+
+                </HorizontalScrollView>
+
+                <TimePicker
+                    android:id="@+id/timePicker"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:theme="@style/ThemeOverlay.AppCompat.Light"
+                    android:timePickerMode="spinner"
+                    android:visibility="@{viewModel.spinnerSelectedItem == 1 || viewModel.spinnerSelectedItem == 2 ? View.VISIBLE : View.GONE}"
+                    tools:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="28dp"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Start from"
+                    android:textColor="@color/mainThemeColor2"
+                    android:textSize="18sp"
+                    android:textStyle="normal" />
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chip_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="24dp"
+                    app:checkedChip="@+id/chip1"
+                    app:selectionRequired="true"
+                    app:singleSelection="true">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:chipBackgroundColor="#DFDFDF"
+                        android:textColor="@color/black"
+                        android:checkable="true"
+                        android:text="@{viewModel.sevenDayListForChip[0]}"
+                        tools:text="Today" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:chipBackgroundColor="#DFDFDF"
+                        android:checkable="true"
+                        android:textColor="@color/black"
+                        android:text="@{viewModel.sevenDayListForChip[1]}"
+                        tools:text="24-Oct" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip3"
+                        android:layout_width="wrap_content"
+                        app:chipBackgroundColor="#DFDFDF"
+                        android:layout_height="wrap_content"
+                        android:checkable="true"
+                        android:textColor="@color/black"
+                        android:text="@{viewModel.sevenDayListForChip[2]}"
+                        tools:text="24-Oct" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:chipBackgroundColor="#DFDFDF"
+                        android:checkable="true"
+                        android:textColor="@color/black"
+                        android:text="@{viewModel.sevenDayListForChip[3]}"
+                        tools:text="24-Oct" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:chipBackgroundColor="#DFDFDF"
+                        android:textColor="@color/black"
+                        android:checkable="true"
+                        android:text="@{viewModel.sevenDayListForChip[4]}"
+                        tools:text="24-Oct" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:chipBackgroundColor="#DFDFDF"
+                        android:checkable="true"
+                        android:textColor="@color/black"
+                        android:text="@{viewModel.sevenDayListForChip[5]}"
+                        tools:text="24-Oct" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checkable="true"
+                        android:textColor="@color/black"
+                        app:chipBackgroundColor="#DFDFDF"
+                        android:text="@{viewModel.sevenDayListForChip[6]}"
+                        tools:text="24-Oct" />
+
+                </com.google.android.material.chip.ChipGroup>
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+</layout>

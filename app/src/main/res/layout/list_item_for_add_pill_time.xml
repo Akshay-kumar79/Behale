@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="java.util.Calendar"/>
+        <import type="com.example.behale.utils.StringUtils"/>
+        <variable
+            name="time"
+            type="Calendar"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="90dp"
+            android:layout_height="75dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="22dp"
+            app:cardUseCompatPadding="true">
+
+                <TextView
+                    android:id="@+id/time_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_regular"
+                    android:textColor="@color/mainThemeColor2"
+                    android:text="@{StringUtils.getTimeString(time.get(Calendar.HOUR_OF_DAY), time.get(Calendar.MINUTE))}"
+                    android:textSize="22sp"
+                    android:layout_gravity="center"
+                    tools:text="23:30" />
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</layout>

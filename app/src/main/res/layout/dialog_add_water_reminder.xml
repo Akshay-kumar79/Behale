@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="15dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+
+                <TextView
+                    android:id="@+id/reminder_dialog_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Add Water Reminder"
+                    android:textColor="@color/mainThemeColor2"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TimePicker
+                    android:id="@+id/timePicker"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:timePickerMode="spinner"
+                    android:theme="@style/ThemeOverlay.AppCompat.Light"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/reminder_dialog_title" />
+
+                <Button
+                    android:id="@+id/cancel_button"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/dialog_button_background"
+                    app:backgroundTint="@null"
+                    app:layout_constraintEnd_toStartOf="@+id/ok_button"
+                    app:layout_constraintHorizontal_chainStyle="spread"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/timePicker"
+                    android:clickable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:focusable="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="cancel"
+                    android:textColor="@color/red"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/cancel_button"
+                    app:layout_constraintEnd_toEndOf="@+id/cancel_button"
+                    app:layout_constraintStart_toStartOf="@+id/cancel_button"
+                    app:layout_constraintTop_toTopOf="@+id/cancel_button" />
+
+                <Button
+                    android:id="@+id/ok_button"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/dialog_button_background"
+                    app:backgroundTint="@null"
+                    android:clickable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:focusable="true"
+                    app:layout_constraintBottom_toBottomOf="@+id/cancel_button"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintStart_toEndOf="@+id/cancel_button" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="ok"
+                    android:textColor="@color/mainThemeColor2"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/ok_button"
+                    app:layout_constraintEnd_toEndOf="@+id/ok_button"
+                    app:layout_constraintStart_toStartOf="@+id/ok_button"
+                    app:layout_constraintTop_toTopOf="@+id/ok_button" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+    </FrameLayout>
+</layout>

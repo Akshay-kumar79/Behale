@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="viewModel"
+            type="com.example.behale.stepsFragment.StepsViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".waterFragment.WaterFragment">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/tool_bar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/mainThemeColor2"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Dark"
+            app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:title="Steps" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:scrollbars="none"
+            android:overScrollMode="never">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/textView23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="No step counter sensor\n found on this device"
+                    android:gravity="center"
+                    android:textColor="@color/red"
+                    android:visibility="@{viewModel.hasStepSensor? View.GONE : View.VISIBLE}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.mikhaellopez.circularprogressbar.CircularProgressBar
+                    android:id="@+id/progress_bar_in_steps_fragment"
+                    android:layout_width="0dp"
+                    android:layout_height="115dp"
+                    android:layout_marginStart="48dp"
+                    android:layout_marginTop="16dp"
+                    android:progress="@{viewModel.progress*100/viewModel.stepGoal > 100 ? 100 : viewModel.progress*100/viewModel.stepGoal}"
+                    app:cpb_background_progressbar_color="#D4D8F3"
+                    app:cpb_background_progressbar_width="7dp"
+                    app:cpb_progress="65"
+                    app:cpb_progress_direction="to_right"
+                    app:cpb_progressbar_color_end="@color/mainThemeColor2"
+                    app:cpb_progressbar_color_start="@color/mainThemeColor"
+                    app:cpb_progressbar_width="9dp"
+                    app:cpb_round_border="true"
+                    app:layout_constraintDimensionRatio="h,1:1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView23" />
+
+                <TextView
+                    android:id="@+id/steps_taken_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_regular"
+                    android:textColor="@color/black"
+                    android:textSize="32sp"
+                    android:text="@{String.valueOf(viewModel.progress)}"
+                    android:layout_marginBottom="20dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/progress_bar_in_steps_fragment"
+                    app:layout_constraintEnd_toEndOf="@+id/progress_bar_in_steps_fragment"
+                    app:layout_constraintStart_toStartOf="@+id/progress_bar_in_steps_fragment"
+                    app:layout_constraintTop_toTopOf="@+id/progress_bar_in_steps_fragment"
+                    tools:text="3241" />
+
+                <androidx.legacy.widget.Space
+                    android:id="@+id/space_for_steps_card_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/steps_taken_text_view"
+                    app:layout_constraintEnd_toEndOf="@+id/steps_taken_text_view"
+                    app:layout_constraintStart_toStartOf="@+id/steps_taken_text_view" />
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="steps"
+                    android:textColor="@color/darkGray"
+                    android:textSize="22sp"
+                    app:layout_constraintEnd_toEndOf="@+id/steps_taken_text_view"
+                    app:layout_constraintStart_toStartOf="@+id/steps_taken_text_view"
+                    app:layout_constraintTop_toBottomOf="@+id/space_for_steps_card_view" />
+
+                <TextView
+                    android:id="@+id/step_goal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="@{String.valueOf(viewModel.stepGoal)}"
+                    tools:text="10000"
+                    android:textColor="@color/black"
+                    android:textSize="36sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.4"
+                    app:layout_constraintStart_toEndOf="@+id/progress_bar_in_steps_fragment"
+                    app:layout_constraintTop_toTopOf="@+id/progress_bar_in_steps_fragment" />
+
+                <androidx.legacy.widget.Space
+                    android:id="@+id/space_for_water_card_view_second"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/step_goal"
+                    app:layout_constraintEnd_toEndOf="@+id/step_goal"
+                    app:layout_constraintStart_toStartOf="@+id/step_goal" />
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="steps"
+                    android:textColor="@color/gray"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/step_goal"
+                    app:layout_constraintStart_toStartOf="@+id/step_goal"
+                    app:layout_constraintTop_toBottomOf="@+id/space_for_water_card_view_second" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Today's Goal"
+                    android:textColor="@color/mainThemeColor2"
+                    android:textSize="24sp"
+                    app:layout_constraintEnd_toEndOf="@+id/step_goal"
+                    app:layout_constraintStart_toStartOf="@+id/step_goal"
+                    app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    app:cardBackgroundColor="@color/white"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="8dp"
+                    app:cardCornerRadius="29dp"
+                    app:cardElevation="2dp"
+                    app:cardUseCompatPadding="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/progress_bar_in_steps_fragment">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/imageView6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
+                            android:src="@drawable/ic_lightbulb"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/textView18"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:fontFamily="sans-serif-medium"
+                            android:text="Walking tips"
+                            android:textColor="@color/gray"
+                            android:textSize="24sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="16dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginBottom="16dp"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="@string/walking_tips"
+                            android:textColor="@color/gray"
+                            android:textSize="14sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textView18" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+</layout>

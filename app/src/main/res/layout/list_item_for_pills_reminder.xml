@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="java.util.Calendar"/>
+        <import type="android.view.View"/>
+        <import type="com.example.behale.utils.StringUtils"/>
+        <variable
+            name="pillsReminder"
+            type="com.example.behale.database.pills.PillsReminderModel" />
+        <variable
+            name="pillsReminderClickListener"
+            type="com.example.behale.pillsFragment.adapter.PillsReminderClickListener" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="85dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="22dp"
+            app:cardUseCompatPadding="true">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:onClick="@{() -> pillsReminderClickListener.onClick(pillsReminder)}"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:maxLines="1"
+                    android:text="@{pillsReminder.pillName}"
+                    tools:text="1 serving Strawberry "
+                    android:layout_marginEnd="24dp"
+                    android:ellipsize="end"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="@{pillsReminder.type}"
+                    tools:text="afternoon"
+                    android:textColor="@color/gray"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="@+id/name"
+                    app:layout_constraintTop_toBottomOf="@+id/name" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</layout>
