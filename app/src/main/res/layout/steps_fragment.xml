@@ -7,14 +7,14 @@
         <import type="android.view.View"/>
         <variable
             name="viewModel"
-            type="com.example.behale.stepsFragment.StepsViewModel" />
+            type="behale.health.reminder.stepsFragment.StepsViewModel" />
     </data>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".waterFragment.WaterFragment">
+        tools:context="behale.health.reminder.waterFragment.WaterFragment">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/tool_bar"

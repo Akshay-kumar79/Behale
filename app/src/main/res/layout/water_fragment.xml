@@ -6,10 +6,10 @@
     <data>
         <variable
             name="waterViewModel"
-            type="com.example.behale.waterFragment.WaterViewModel" />
+            type="behale.health.reminder.waterFragment.WaterViewModel" />
         <variable
             name="waterFragment"
-            type="com.example.behale.waterFragment.WaterFragment" />
+            type="behale.health.reminder.waterFragment.WaterFragment" />
     </data>
 
     <LinearLayout
@@ -17,7 +17,7 @@
         android:layout_width="match_parent"
         android:background="@color/white"
         android:layout_height="match_parent"
-        tools:context=".waterFragment.WaterFragment">
+        tools:context="behale.health.reminder.waterFragment.WaterFragment">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/tool_bar"

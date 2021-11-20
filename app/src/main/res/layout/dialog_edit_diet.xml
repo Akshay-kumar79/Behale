@@ -8,7 +8,7 @@
         <import type="java.util.Calendar"/>
         <variable
             name="viewModel"
-            type="com.example.behale.dietFragment.DietViewModel" />
+            type="behale.health.reminder.dietFragment.DietViewModel" />
     </data>
 
     <FrameLayout

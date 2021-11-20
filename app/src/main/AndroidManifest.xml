@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.behale">
+    package="behale.health.reminder">
 
     <!-- Project Started on 4th sept, 2021 -->
     <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.gms.permission.ACTIVITY_RECOGNITION"/>
     <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
 
     <application
@@ -15,7 +16,7 @@
         android:theme="@style/Theme.Behale" >
 
         <activity
-            android:name=".MainActivity"
+            android:name="behale.health.reminder.MainActivity"
             android:exported="true"
             android:theme="@style/SplashTheme"
             android:screenOrientation="portrait">
@@ -26,20 +27,20 @@
             </intent-filter>
         </activity>
 
-        <service android:name=".receiver.StepCounterService"/>
+        <service android:name="behale.health.reminder.receiver.StepCounterService"/>
 
         <receiver
-            android:name=".receiver.ShowWaterNotificationReceiver"
+            android:name="behale.health.reminder.receiver.ShowWaterNotificationReceiver"
             android:enabled="true"
             android:exported="false"/>
         <receiver
-            android:name=".receiver.DrinkWaterReceiver"
+            android:name="behale.health.reminder.receiver.DrinkWaterReceiver"
             android:enabled="true"
             android:exported="false"/>
-        <receiver android:name=".receiver.ShowDietNotificationReceiver"
+        <receiver android:name="behale.health.reminder.receiver.ShowDietNotificationReceiver"
             android:enabled="true"
             android:exported="false"/>
-        <receiver android:name=".receiver.ShowPillNotificationReceiver"
+        <receiver android:name="behale.health.reminder.receiver.ShowPillNotificationReceiver"
             android:enabled="true"
             android:exported="false"/>
 

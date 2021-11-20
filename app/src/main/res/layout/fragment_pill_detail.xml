@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-        <import type="com.example.behale.utils.StringUtils"/>
+        <import type="behale.health.reminder.utils.StringUtils"/>
         <variable
             name="viewModel"
-            type="com.example.behale.pillsFragment.PillsViewModel" />
+            type="behale.health.reminder.pillsFragment.PillsViewModel" />
     </data>
 
     <LinearLayout
@@ -32,7 +32,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:context=".pillsFragment.dialogs.PillDetailFragment">
+                tools:context="behale.health.reminder.pillsFragment.dialogs.PillDetailFragment">
 
                 <TextView
                     android:id="@+id/textView8"

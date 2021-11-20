@@ -5,7 +5,7 @@
     <string name="water_reminder_notification_channel_id">waterReminderNotificationChannelID</string>
     <string name="diet_reminder_notification_channel_id">dietReminderNotificationChannelID</string>
     <string name="pill_reminder_notification_channel_id">pillReminderNotificationChannelID</string>
-    <!-- TODO: Remove or change this placeholder text -->
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="walking_tips">1. start slowly, do a few warm-up exercises and stretches first. Don’t walk immediately after a big meal\n2. start with a 20 minute walk then increase gradually. Try to walk at least three times per week\n3. walk at a steady pace, swing your arms freely and stand as straight as you can. Your feet should step in a rolling action from the heel to the toe\n4. wear thick comfortable cotton socks. Sensible, comfortable and lightweight shoes with support are best\n5. wear suitable warm, light clothing in the winter and cool, comfortable clothes in the summer. Don’t forget your sunscreen and hat\n6. drink water before and after your walk. Take water with you on your walk, especially in warm weather\n7. make sure you cool down after a long fast walk. Do a few stretching exercises.</string>
 

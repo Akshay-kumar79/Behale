@@ -7,14 +7,14 @@
         <import type="android.view.View"/>
         <variable
             name="viewModel"
-            type="com.example.behale.homeFragment.HomeViewModel" />
+            type="behale.health.reminder.homeFragment.HomeViewModel" />
     </data>
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/white"
-        tools:context=".homeFragment.HomeFragment">
+        tools:context="behale.health.reminder.homeFragment.HomeFragment">
 
         <ImageView
             android:layout_width="match_parent"
@@ -657,28 +657,21 @@
 
                         <TextView
                             android:id="@+id/textView17"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginBottom="8dp"
                             android:fontFamily="sans-serif-medium"
-                            android:text="Yesterday"
-                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="The longest journey begins with a single step"
                             android:textColor="@color/gray"
-                            android:textSize="24sp"
-                            android:textStyle="bold"
-                            app:layout_constraintStart_toStartOf="@+id/textView14"
+                            android:textSize="12sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/view" />
-
-                        <TextView
-                            android:id="@+id/textView16"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="sans-serif-medium"
-                            android:text="@{String.valueOf(viewModel.yesterdaySteps)}"
-                            tools:text="9940"
-                            android:textColor="@color/mainThemeColor2"
-                            android:textSize="18sp"
-                            app:layout_constraintStart_toStartOf="@+id/textView17"
-                            app:layout_constraintTop_toBottomOf="@+id/textView17" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 

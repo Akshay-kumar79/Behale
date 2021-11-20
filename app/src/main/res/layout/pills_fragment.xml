@@ -6,7 +6,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.example.behale.pillsFragment.PillsViewModel" />
+            type="behale.health.reminder.pillsFragment.PillsViewModel" />
     </data>
 
     <LinearLayout

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.behale.homeFragment.HomeFragment"
+        android:name="behale.health.reminder.homeFragment.HomeFragment"
         android:label="HomeFragment"
         tools:layout="@layout/home_fragment">
         <action
@@ -42,7 +42,7 @@
 
     <fragment
         android:id="@+id/stepsFragment"
-        android:name="com.example.behale.stepsFragment.StepsFragment"
+        android:name="behale.health.reminder.stepsFragment.StepsFragment"
         android:label="Steps"
         tools:layout="@layout/steps_fragment" />
 
@@ -50,7 +50,7 @@
         app:startDestination="@id/waterFragment">
         <fragment
             android:id="@+id/waterFragment"
-            android:name="com.example.behale.waterFragment.WaterFragment"
+            android:name="behale.health.reminder.waterFragment.WaterFragment"
             android:label="Water"
             tools:layout="@layout/water_fragment">
             <action
@@ -65,17 +65,17 @@
         </fragment>
         <dialog
             android:id="@+id/changeContainerDialog"
-            android:name="com.example.behale.waterFragment.dialogs.ChangeContainerDialog"
+            android:name="behale.health.reminder.waterFragment.dialogs.ChangeContainerDialog"
             android:label="ChangeContainerDialog"
             tools:layout="@layout/dialog_change_container"/>
         <dialog
             android:id="@+id/addWaterReminderDialog"
-            android:name="com.example.behale.waterFragment.dialogs.AddWaterReminderDialog"
+            android:name="behale.health.reminder.waterFragment.dialogs.AddWaterReminderDialog"
             android:label="AddWaterReminderDialog"
             tools:layout="@layout/dialog_add_water_reminder"/>
         <dialog
             android:id="@+id/editWaterReminderDialog"
-            android:name="com.example.behale.waterFragment.dialogs.EditWaterReminderDialog"
+            android:name="behale.health.reminder.waterFragment.dialogs.EditWaterReminderDialog"
             android:label="EditWaterReminderDialog"
             tools:layout="@layout/dialog_edit_water_reminder"/>
     </navigation>
@@ -83,7 +83,7 @@
         app:startDestination="@id/dietFragment">
         <fragment
             android:id="@+id/dietFragment"
-            android:name="com.example.behale.dietFragment.DietFragment"
+            android:name="behale.health.reminder.dietFragment.DietFragment"
             android:label="Diet"
             tools:layout="@layout/diet_fragment">
             <action
@@ -96,12 +96,12 @@
 
         <dialog
             android:id="@+id/addDietDialog"
-            android:name="com.example.behale.dietFragment.dialogs.AddDietDialog"
+            android:name="behale.health.reminder.dietFragment.dialogs.AddDietDialog"
             android:label="AddDietDialog"
             tools:layout="@layout/dialog_add_diet" />
         <dialog
             android:id="@+id/editDietDialog"
-            android:name="com.example.behale.dietFragment.dialogs.EditDietDialog"
+            android:name="behale.health.reminder.dietFragment.dialogs.EditDietDialog"
             android:label="EditDietDialog"
             tools:layout="@layout/dialog_edit_diet"/>
     </navigation>
@@ -109,7 +109,7 @@
         app:startDestination="@id/pillsFragment">
         <fragment
             android:id="@+id/pillsFragment"
-            android:name="com.example.behale.pillsFragment.PillsFragment"
+            android:name="behale.health.reminder.pillsFragment.PillsFragment"
             android:label="Pills"
             tools:layout="@layout/pills_fragment">
             <action
@@ -121,12 +121,12 @@
         </fragment>
         <fragment
             android:id="@+id/addPillFragment"
-            android:name="com.example.behale.pillsFragment.dialogs.AddPillFragment"
+            android:name="behale.health.reminder.pillsFragment.dialogs.AddPillFragment"
             android:label="Add Your Pill"
             tools:layout="@layout/fragment_add_pill" />
         <fragment
             android:id="@+id/pillDetailFragment"
-            android:name="com.example.behale.pillsFragment.dialogs.PillDetailFragment"
+            android:name="behale.health.reminder.pillsFragment.dialogs.PillDetailFragment"
             android:label="Pill Detail"
             tools:layout="@layout/fragment_pill_detail" />
     </navigation>

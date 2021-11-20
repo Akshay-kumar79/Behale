@@ -5,16 +5,16 @@
 
     <data>
         <import type="java.util.Calendar"/>
-        <import type="com.example.behale.utils.StringUtils"/>
+        <import type="behale.health.reminder.utils.StringUtils"/>
         <variable
             name="waterReminder"
-            type="com.example.behale.database.water.WaterReminderModel" />
+            type="behale.health.reminder.database.water.WaterReminderModel" />
         <variable
             name="waterReminderClickListener"
-            type="com.example.behale.waterFragment.adapters.WaterReminderClickListener" />
+            type="behale.health.reminder.waterFragment.adapters.WaterReminderClickListener" />
         <variable
             name="waterReminderSwitchClickListener"
-            type="com.example.behale.waterFragment.adapters.WaterReminderSwitchClickListener" />
+            type="behale.health.reminder.waterFragment.adapters.WaterReminderSwitchClickListener" />
     </data>
 
     <LinearLayout

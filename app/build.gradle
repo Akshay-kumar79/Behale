@@ -6,31 +6,32 @@ plugins {
 }
 
 android {
+
     signingConfigs {
         debug {
             storeFile file('C:\\Users\\Akshay kumar shaw\\OneDrive\\Desktop\\health_reminder_keystore.jks')
             storePassword 'health_reminder'
-            keyAlias 'key0'
             keyPassword 'health_reminder'
+            keyAlias 'key1'
         }
     }
     compileSdk 30
 
     defaultConfig {
-        applicationId "com.example.behale"
+        applicationId "behale.health.reminder"
         minSdk 23
         targetSdk 30
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        signingConfig signingConfigs.debug
     }
 
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.debug
         }
     }
     compileOptions {

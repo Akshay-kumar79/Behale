@@ -5,7 +5,7 @@
 
     <data>
         <import type="java.util.Calendar"/>
-        <import type="com.example.behale.utils.StringUtils"/>
+        <import type="behale.health.reminder.utils.StringUtils"/>
         <variable
             name="time"
             type="Calendar"/>
